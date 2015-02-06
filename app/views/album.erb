@@ -1,0 +1,36 @@
+
+
+<div>
+      <h1>File upload here</h1>
+      <form action = '/upload' method = 'post' enctype ='multipart/form-data'>
+        Upload to:
+        <select name="album">
+          <% @albums.each do |a| %>
+          <option value="<%= a.id %>"><%= a.title %></option>
+          <% end %>
+        </select>
+        <br/><br/>
+        or create a new album titled:
+        <input type = 'text' name = 'new_album_title'>
+        <br/><br/>
+        <input type = 'file' name = 'myfiles[]' multiple>
+        <br/><br/>
+        <input type = 'submit' value = 'Upload'>
+      </form>
+</div>
+
+<div id="photo_box">
+
+    <% @photos.each do |x| %>
+    <img src="<%= x.avatar.url %>" alt="Image Here" style="width:300px;height:200px">
+
+    <% end %>
+
+
+</div>
+
+<div>
+    <form action ='/logout' method = 'post'>
+      <input type = 'submit' value = 'Logout'>
+    </form>
+</div>

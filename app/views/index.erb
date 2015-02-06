@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>Welcome The website that shares photoseses!</h1>
+  <h2>This is the BEST thing since the last best thing!</h2>
+  <h3>The BEST UX in town </h3>
+Login
+<form action = '/login' method = 'post'>
+Username :<input type ="text" name="username">
+<br>
+Password :<input type = 'password' name ="password">
+<input type = 'submit' value = 'Login'>
+</form>
+<br/>
+
+Sign Up
+<form action = '/signup' method = 'post'>
+Username :<input type ="text" name="username">
+<br>
+Password :<input type = 'password' name ="password">
+<input type = 'submit' value = 'Sign up'>
+</form>
+
+  <div id ='photo_box'>
+    <% @photos.each do |x| %>
+    <img src="<%= x.avatar.url %>" alt="Image Here" style="width:300px;height:200px">
+
+    <% end %>
+
+  </div>
+
+
+
+</div>
+
+
+
+
